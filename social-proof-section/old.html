@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Social proof section</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+      :root {
+        --primary-magenta: hsl(300, 43%, 22%);
+        --primary-pink: hsl(333, 80%, 67%);
+        --neutral-dark: hsl(303, 10%, 53%);
+        --neutral-light: hsl(300, 24%, 96%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "League Spartan", Helvetica, sans-serif;
+        border-radius: 8px;
+      }
+
+      html {
+        font-size: 15px;
+        padding-inline: 24px;
+        padding-block: 75px;
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+      }
+
+      h1 {
+        color: var(--primary-magenta);
+        font-size: 48px;
+        max-width: 15ch;
+      }
+
+      h3 {
+        color: var(--neutral-dark);
+        font-weight: 500;
+        line-height: 1.5;
+        max-width: 15ch;
+      }
+
+      p {
+        max-width: 30ch;
+      }
+
+      #main {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding-block-end: 50px;
+      }
+
+      #main > * {
+        flex: 1;
+      }
+
+      #ratings {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      #reviews {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        line-height: 1.5;
+      }
+
+      .rating-card {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        gap: 12px;
+        padding-block: 12px;
+        color: var(--primary-magenta);
+        background-color: var(--neutral-light);
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .rating-card::before {
+        content: "⭐⭐⭐⭐⭐";
+      }
+
+      .review-card {
+        color: white;
+        position: relative;
+        background-color: var(--primary-magenta);
+        padding: 40px 30px;
+      }
+
+      .review-card .top {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding-bottom: 24px;
+      }
+
+      img {
+        align-self: center;
+        border-radius: 50%;
+        width: 40px;
+        height: auto;
+      }
+
+      .review-card h5 {
+        color: var(--primary-pink);
+        font-weight: 400;
+      }
+
+      @media only screen and (width > 650px) {
+        #main {
+          flex-direction: row;
+        }
+
+        main {
+          justify-content: center;
+        }
+
+        header {
+          text-align: left;
+        }
+
+        .rating-card:nth-child(1) {
+          left: 20px;
+        }
+
+        .rating-card:nth-child(2) {
+          left: 40px;
+        }
+
+        .rating-card:nth-child(3) {
+          left: 60px;
+        }
+
+        #reviews {
+          flex-direction: row;
+        }
+
+        .review-card:nth-child(1) {
+          top: 20px;
+        }
+
+        .review-card:nth-child(2) {
+          top: 40px;
+        }
+
+        .review-card:nth-child(3) {
+          top: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main">
+      <header>
+        <h1>10,000+ of our users love our products.</h1>
+
+        <h3>
+          We only provide great products combined with excellent customer
+          service. See what our satisfied customers are saying about our
+          services.
+        </h3>
+      </header>
+
+      <div id="ratings">
+        <div class="rating-card">Rated 5 Stars in Reviews</div>
+        <div class="rating-card">Rated 5 Stars in Report Guru</div>
+        <div class="rating-card">Rated 5 Stars in BestTech</div>
+      </div>
+    </main>
+
+    <div id="reviews">
+      <div class="review-card">
+        <div class="top">
+          <img src="./images/image-colton.jpg" alt="portrait" />
+          <div>
+            <h4>Colton Smith</h4>
+            <h5>Verified Buyer</h5>
+          </div>
+        </div>
+        <p>
+          "We needed the same printed design as the one we had ordered a week
+          prior. Not only did they find the original order, but we also received
+          it in time. Excellent!"
+        </p>
+      </div>
+
+      <div class="review-card">
+        <div class="top">
+          <img src="./images/image-irene.jpg" alt="portrait" />
+          <div>
+            <h4>Irene Roberts</h4>
+            <h5>Verified Buyer</h5>
+          </div>
+        </div>
+        <p>
+          "Customer service is always excellent and very quick turn around.
+          Completely delighted with the simplicity of the purchase and the speed
+          of delivery."
+        </p>
+      </div>
+
+      <div class="review-card">
+        <div class="top">
+          <img src="./images/image-anne.jpg" alt="portrait" />
+          <div>
+            <h4>Anne Wallace</h4>
+            <h5>Verified Buyer</h5>
+          </div>
+        </div>
+        <p>
+          "Put an order with this company and can only praise them for the very
+          high standard. Will definitely use them again and recommend them to
+          everyone!"
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
