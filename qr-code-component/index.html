@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | QR code component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+
+      :root {
+        --bg-color: hsl(212, 45%, 89%);
+        --text-light: hsl(220, 15%, 55%);
+        --text-dark: hsl(218, 44%, 22%);
+        --text-p-size: 15px;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        background-color: var(--bg-color);
+        font-family: "Outfit", Helvetica, sans-serif;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+        padding: 16px;
+        border-radius: 16px;
+        background-color: white;
+        text-align: center;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      h2 {
+        color: var(--text-dark);
+        padding-inline: 8px;
+        padding-top: 30px;
+        padding-bottom: 25px;
+      }
+
+      p {
+        font-size: var(--text-p-size);
+        color: var(--text-light);
+        padding-inline: 8px;
+        padding-bottom: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="images/image-qr-code.png" alt="qr code" />
+      <h2>Improve your front-end skills by building projects</h2>
+
+      <p>
+        Scan the QR code to visit Frontend Mentor and take your coding skills to
+        the next level
+      </p>
+    </main>
+  </body>
+</html>
