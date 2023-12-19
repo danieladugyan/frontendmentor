@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Frontend Mentor | Launch countdown timer</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>WE’RE LAUNCHING SOON</h1>
+      </header>
+
+      <section class="timer">
+        <div class="timer-item days">
+          <div class="number-box">
+            <span class="number" id="day">08</span>
+            <span class="left-bevel"></span>
+            <span class="right-bevel"></span>
+          </div>
+          <p class="label">DAYS</p>
+        </div>
+        <div class="timer-item hours">
+          <div class="number-box">
+            <span class="number" id="hour">23</span>
+            <span class="left-bevel"></span>
+            <span class="right-bevel"></span>
+          </div>
+          <p class="label">HOURS</p>
+        </div>
+        <div class="timer-item minutes">
+          <div class="number-box">
+            <span class="number" id="minute">55</span>
+            <span class="left-bevel"></span>
+            <span class="right-bevel"></span>
+          </div>
+          <p class="label">MINUTES</p>
+        </div>
+        <div class="timer-item seconds">
+          <div class="number-box">
+            <span class="number" id="second">41</span>
+            <span class="left-bevel"></span>
+            <span class="right-bevel"></span>
+          </div>
+          <p class="label">SECONDS</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <button class="facebook"></button>
+      <button class="pinterest"></button>
+      <button class="instagram"></button>
+    </footer>
+  </body>
+
+  <script>
+    const countDownDate = new Date().setDate(new Date().getDate() + 14);
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.querySelector("#day").innerHTML = days
+        .toString()
+        .padStart("2", "0");
+      document.querySelector("#hour").innerHTML = hours
+        .toString()
+        .padStart("2", "0");
+      document.querySelector("#minute").innerHTML = minutes
+        .toString()
+        .padStart("2", "0");
+      document.querySelector("#second").innerHTML = seconds
+        .toString()
+        .padStart("2", "0");
+    }, 500);
+  </script>
+</html>

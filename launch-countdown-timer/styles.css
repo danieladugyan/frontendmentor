@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+
+::selection {
+  background: hsl(345, 95%, 68%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+body {
+  background-image: url("images/pattern-hills.svg"), url("images/bg-stars.svg"),
+    linear-gradient(hsl(235, 16%, 14%), hsl(272, 21%, 14%));
+  background-repeat: no-repeat;
+  background-size: 100% 25%, 100% 75%, cover;
+  background-position: bottom, top;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  padding-inline: 1.5rem;
+}
+
+h1 {
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 0.4rem;
+  padding-block-start: 10rem;
+  padding-block-end: 4rem;
+}
+
+/* start of timer */
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem, 0.6rem + 1.5vw, 2rem);
+}
+
+.timer-item {
+  position: relative;
+  width: clamp(70px, 42px + 7.5vw, 150px);
+  overflow: hidden;
+}
+
+.number {
+  display: grid;
+  place-content: center;
+  color: hsl(345, 95%, 68%);
+  background-color: hsl(236, 21%, 26%);
+  box-shadow: 0px 5px hsla(236, 21%, 5%, 0.2);
+  aspect-ratio: 1 / 1;
+  border-radius: 4%;
+  font-size: clamp(2rem, 1rem + 4.5vw, 5rem);
+}
+
+/* half-shadow */
+.number::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.15);
+  display: block;
+  position: absolute;
+  height: 50%;
+  width: 100%;
+}
+
+/* semi-circles */
+.number-box {
+  position: relative;
+  --bevel-size: clamp(0.375rem, 0.25rem + 0.55vw, 0.75rem);
+}
+
+.left-bevel,
+.right-bevel {
+  background-color: hsla(236, 21%, 5%, 0.5);
+  border-radius: 100%;
+  display: block;
+  position: absolute;
+  top: calc(50% - var(--bevel-size) / 2);
+  height: var(--bevel-size);
+  width: var(--bevel-size);
+}
+
+.left-bevel {
+  left: calc(-1 * var(--bevel-size) / 2);
+}
+
+.right-bevel {
+  right: calc(-1 * var(--bevel-size) / 2);
+}
+
+.label {
+  margin-top: 16px;
+  color: hsl(237, 18%, 59%);
+  font-size: 6px;
+  font-size: clamp(0.375rem, 0.3rem + 0.4vw, 0.625rem);
+  letter-spacing: 4px;
+}
+
+/* end of timer */
+
+footer {
+  width: 100%;
+  margin-block-end: 2rem;
+  margin-top: auto;
+}
+
+button {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 1rem;
+  border: unset;
+  background-color: unset;
+}
+
+button:hover {
+  cursor: pointer;
+  filter: invert(60%) sepia(21%) saturate(7056%) hue-rotate(310deg)
+    brightness(100%) contrast(98%);
+}
+
+.facebook {
+  background-image: url("images/icon-facebook.svg");
+}
+
+.instagram {
+  background-image: url("images/icon-instagram.svg");
+}
+
+.pinterest {
+  background-image: url("images/icon-pinterest.svg");
+}
