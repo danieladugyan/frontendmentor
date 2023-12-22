@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | News homepage</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <dialog>
+      <button class="dialog-close" onclick="closeDrawer()">
+        <svg width="32" height="31" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#00001A" fill-rule="evenodd">
+            <path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z" />
+            <path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z" />
+          </g>
+        </svg>
+      </button>
+      <div class="drawer-links">
+        <a href="#">Home</a>
+        <a href="#">New</a>
+        <a href="#">Popular</a>
+        <a href="#">Trending</a>
+        <a href="#">Categories</a>
+      </div>
+    </dialog>
+
+    <nav>
+      <img class="logo" src="./assets/images/logo.svg" alt="logo" />
+      <button class="dialog-open" onclick="openDrawer()">
+        <svg width="40" height="17" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#00001A" fill-rule="evenodd">
+            <path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z" />
+            <path d="M0 0h40v3H0z" />
+          </g>
+        </svg>
+      </button>
+
+      <div class="links">
+        <a href="#">Home</a>
+        <a href="#">New</a>
+        <a href="#">Popular</a>
+        <a href="#">Trending</a>
+        <a href="#">Categories</a>
+      </div>
+    </nav>
+
+    <div id="hero"></div>
+
+    <h1>The Bright Future of Web 3.0?</h1>
+    <main>
+      <p>
+        We dive into the next evolution of the web that claims to put the power
+        of the platforms back into the hands of the people. But is it really
+        fulfilling its promise?
+      </p>
+      <button>Read more</button>
+    </main>
+
+    <aside>
+      <h2>New</h2>
+      <div class="new-articles">
+        <article>
+          <a href="#"><h3>Hydrogen VS Electric Cars</h3></a>
+          <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+        </article>
+
+        <article>
+          <a href="#"><h3>The Downsides of AI Artistry</h3></a>
+          <p>
+            What are the possible adverse effects of on-demand AI image
+            generation?
+          </p>
+        </article>
+
+        <article>
+          <a href="#"><h3>Is VC Funding Drying Up?</h3></a>
+          <p>
+            Private funding by VC firms is down 50% YOY. We take a look at what
+            that means.
+          </p>
+        </article>
+      </div>
+    </aside>
+
+    <footer>
+      <article>
+        <img src="./assets/images/image-retro-pcs.jpg" alt="Retro PCs" />
+        <div>
+          <a href="#"><h3>Reviving Retro PCs</h3></a>
+          <p>What happens when old PCs are given modern upgrades?</p>
+        </div>
+      </article>
+
+      <article>
+        <img src="./assets/images/image-top-laptops.jpg" alt="Top Laptops" />
+        <div>
+          <a href="#">
+            <h3>Top 10 Laptops of 2022</h3>
+          </a>
+          <p>Our best picks for various needs and budgets.</p>
+        </div>
+      </article>
+
+      <article>
+        <img
+          src="./assets/images/image-gaming-growth.jpg"
+          alt="Gaming Growth"
+        />
+        <div>
+          <a href="#"><h3>The Growth of Gaming</h3></a>
+          <p>How the pandemic has sparked fresh opportunities.</p>
+        </div>
+      </article>
+    </footer>
+  </body>
+
+  <script>
+    /** @type {HTMLDialogElement} */
+    const dialog = document.querySelector("dialog");
+    const body = document.querySelector("body");
+
+    dialog.addEventListener("click", (event) => {
+      const rect = event.target.getBoundingClientRect();
+
+      if (
+        rect.left > event.clientX ||
+        rect.right < event.clientX ||
+        rect.top > event.clientY ||
+        rect.bottom < event.clientY
+      ) {
+        closeDrawer();
+      }
+    });
+
+    function openDrawer() {
+      dialog.showModal();
+      body.style.overflow = "hidden";
+    }
+
+    function closeDrawer() {
+      dialog.close();
+      body.style.overflow = null;
+    }
+  </script>
+</html>
